@@ -1,0 +1,24 @@
+{
+  "name": "findyourmovie",
+  "version": "1.0.0",
+  "description": "Users can find the movies details.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishu221b/find-your-movie.git"
+  },
+  "author": "vishu221b",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishu221b/find-your-movie/issues"
+  },
+  "homepage": "https://github.com/vishu221b/find-your-movie#readme",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Search Results</title>
+</head>
+<body>
+    <div class="container">
+        <div class="make-center mt-5 mb-5">
+            <h1 class=" " id="headerTop">Results <span id="resultsArrow">>></span> Avengers</h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+            <% movies.forEach((movie) => {%>
+                <div class="col mb-5 w-75">
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="https://image.tmdb.org/t/p/w200/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg" class="card-img img-fluid" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title"><%= movie.title %></h5>
+                                    <hr>
+                                    <p class="card-text"><%= movie.summary.substring(0,130) %><a href="">...read more</a></p>
+                                </div>
+                                <div class="card-footer" style="width: 100%;position: absolute;bottom:0;">
+                                        <small class="card-text" style="width: auto;position: relative;">Votes: <%= movie.votes %><span class="rating">Rating: <%= movie.ratings%></span></small>
+                                    <hr>
+                                    <small class="text-muted"><span style="float:left;">Released on <%= movie.release_date %></span><a href="#" style="float:right;">View more...</a> 
+                                    </small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% });%>
+        </div>
+    </div>
+</body>
+</html>

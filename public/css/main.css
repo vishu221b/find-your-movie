@@ -1,3 +1,20 @@
 #bodyContainer{
     margin-top: 18%;
 }
+
+.container{
+    max-width: 90%;
+}
+
+.rating{
+    margin: auto;
+}
+
+.make-center{
+    float: top;
+    text-align: left;
+}
+
+.card-footer{
+    background-color:#fff;
+}

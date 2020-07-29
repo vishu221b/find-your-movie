@@ -11,26 +11,26 @@
 <body>
     <div class="container">
         <div class="make-center mt-5 mb-5">
-            <h1 class=" " id="headerTop">Results <span id="resultsArrow">>></span> Avengers</h1>
+            <h1 class=" " id="headerTop">Results <span id="resultsArrow">>></span> <%= query %></h1>
         </div>
         <div class="row row-cols-1 row-cols-md-2">
             <% movies.forEach((movie) => {%>
-                <div class="col mb-5 w-75">
+                <div class="col mb-5 w-75"  style="max-height: 90%;">
                     <div class="card">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="https://image.tmdb.org/t/p/w200/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg" class="card-img img-fluid" alt="...">
+                                <img src="https://image.tmdb.org/t/p/w200<%= movie.poster %>" class="card-img img-fluid" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h4 class="card-title"><%= movie.title %></h5>
                                     <hr>
                                     <p class="card-text"><%= movie.summary.substring(0,130) %><a href="">...read more</a></p>
+                                    <hr>
+                                    <small class="card-text" style="width: auto;position: relative;">Votes: <%= movie.votes %><span class="rating">Rating: <%= movie.ratings%></span></small>
                                 </div>
                                 <div class="card-footer" style="width: 100%;position: absolute;bottom:0;">
-                                        <small class="card-text" style="width: auto;position: relative;">Votes: <%= movie.votes %><span class="rating">Rating: <%= movie.ratings%></span></small>
-                                    <hr>
-                                    <small class="text-muted"><span style="float:left;">Released on <%= movie.release_date %></span><a href="#" style="float:right;">View more...</a> 
+                                    <small class="text-muted"><span style="float:left;">Released on <%= movie.date %></span><a href="#" style="float:right;">View more...</a> 
                                     </small></div>
                             </div>
                         </div>

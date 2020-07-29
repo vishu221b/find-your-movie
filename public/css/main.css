@@ -7,7 +7,7 @@
 }
 
 .rating{
-    margin-left: 120px;
+    margin-left: 260px;
 }
 
 .make-center{
@@ -17,4 +17,9 @@
 
 .card-footer{
     background-color:#fff;
+}
+
+.card .card-img{
+    max-height: 340px;
+    min-height: 340px;
 }

@@ -7,7 +7,7 @@
 }
 
 .rating{
-    margin-left: 260px;
+    float: right;
 }
 
 .make-center{
@@ -20,6 +20,6 @@
 }
 
 .card .card-img{
-    max-height: 340px;
-    min-height: 340px;
+    max-height: 350px;
+    min-height: 350px;
 }

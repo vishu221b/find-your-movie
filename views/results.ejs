@@ -9,35 +9,45 @@
     <title>Search Results</title>
 </head>
 <body>
-    <div class="container" style="padding: 0px 100px;">
-        <div class="make-center mt-5 mb-5 ml-3">
+    <div class="container" style="padding: 0px 100px; margin: 0px 50px;">
+        <div class="make-center mt-5 mb-5">
             <h2 class="" id="headerTop">Results <span id="resultsArrow">for >>></span> "<%= query.toUpperCase() %>"</h2>
         </div>
-        <!-- <div class="row row-cols-1 row-cols-md-2"> -->
-        <div class="ml-2">
-            <% movies.forEach((movie) => {%>
-                <div class="col mb-5">
-                    <div class="card" style="width: 90%;">
+        <!-- <div class="card-columns ml-2" id="clickable"> -->
+            <% if(movies.length) {%>
+                <% movies.forEach((movie) => {%>
+                    <div class="card mb-4">
                         <div class="row no-gutters">
                             <div class="col-md-3">
-                                <img src="https://image.tmdb.org/t/p/w200<%= movie.poster %>" class="card-img img-fluid" alt="...">
+                            <% if (movie.poster) {%>
+                                <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster%>" class="card-img" alt="<%=movie.title%>">
+                            <% } else{%>
+                                <img src="https://www.drupal.org/files/project-images/broken-image.jpg" class="card-img" alt="<%=movie.title%>">
+                            <% }%>
                             </div>
                             <div class="col-md-9">
-                                <div class="card-body mb-2" style="height: 87%;">
-                                    <h4 class="card-title"><%= movie.title %></h4>
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= movie.title %></h5>
                                     <hr>
-                                    <p class="card-text" style="height:65%;"><%= movie.summary.substring(0,390) %><a href="">...read more</a></p>
-                                    <small class="mb-0">Total votes: <%= movie.votes %><span class="rating">Rating: <%= movie.ratings%></span></small>
+                                    <p class="card-text" style="width:90%;position: absolute; margin-bottom: 60px;"><%= movie.summary %></p>
+                                    <p class="card-text" style="width:90%;position: absolute;bottom: 0; margin-bottom: 40px;"><small class="text-muted"><span style="float: left; margin-left: 5px;">Total votes: <%= movie.votes%></span><span class="rating">Rating: <%= movie.ratings %></span></small></p>
+                                    <p class="card-text" style="width:90%;position: absolute;bottom: 0; margin-bottom: 10px;"><small class="text-muted"><span style="float:left;margin-left: 5px;">Release date: <%= movie.date%></span></small></p>
                                 </div>
-                                <div class="card-footer" style="margin-top:0px;width: 100%;position: absolute;bottom:0;">
-                                    <small class="text-muted"><span style="float:left;">Released on <%= movie.date %></span><a href="#" style="float:right;">View more...</a> 
-                                    </small></div>
                             </div>
                         </div>
                     </div>
-                </div>
             <% });%>
-        </div>
+            <%} else {%>
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">No movies found :(</h1>
+                        <p class="lead">Please use a valid search query.</p>
+                    </div>
+                </div>
+            <% }%>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
